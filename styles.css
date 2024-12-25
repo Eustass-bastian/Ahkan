@@ -1,0 +1,481 @@
+@font-face {
+  font-family: "Aptos";
+  src: url(fonts/Aptos.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Doner";
+  src: url("fonts/Doner.ttf") format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+}
+
+.bgimage {
+  position: absolute; /* Ensure the image spans the entire viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("Homepage-Pictures/BG.jpg");
+  background-size: cover;
+  background-position: 50% 20%;
+  background-repeat: no-repeat;
+  z-index: -1;
+  transform: scaleX(-1);
+}
+
+.navbar-container {
+  background-color: #fff;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  margin: auto;
+  width: 90%;
+  z-index: 1000;
+}
+
+.logo {
+  width: 11.188rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 3rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #000;
+  font-size: 1.25rem;
+  font-family: "Aptos", sans-serif;
+  position: relative;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 6px rgba(231, 89, 89, 0.1);
+  z-index: 10;
+  padding: 10px 5px;
+  border-radius: 5px;
+  min-width: 12.5rem;
+}
+
+.nav-links a,
+.dropdown-menu a {
+  text-decoration: none; /* No underline */
+  color: #000; /* Default text color */
+  font-size: 1rem;
+  font-weight: bold;
+  transition: color 0.3s ease; /* Smooth transition for color */
+}
+
+/* Hover effect for all links */
+.nav-links a:hover,
+.dropdown-menu a:hover {
+  color: #086189; /* Change color on hover */
+}
+
+/* Dropdown menu animation */
+.dropdown:hover .dropdown-menu {
+  display: block;
+  animation: fadeIn 0.3s ease-in-out; /* Add fade-in animation */
+}
+.dropdown-menu a {
+  display: block;
+  padding: 1rem;
+  text-decoration: none;
+  color: #000;
+  font-size: 1rem;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.btn {
+  width: 6.875rem;
+  height: 2.292rem;
+  background: #086189;
+  color: #fff;
+  border: none;
+  border-radius: 0.3em;
+  font-size: 1.25em;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  font-family: "Aptos";
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+button:hover {
+  color: black;
+}
+
+button:after {
+  content: "";
+  background: white;
+  position: absolute;
+  z-index: -1;
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+  transition: all 0.5s;
+}
+
+button:hover:after {
+  transform: skewX(-45deg) scale(1, 1);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.heading-container {
+  display: flex;
+  justify-content: center;
+  min-height: 90vh; /* Use 100% of the viewport height */
+  padding-top: 0; /* Remove the fixed padding */
+  padding-bottom: 0; /* Remove the fixed padding */
+  flex-direction: column;
+}
+
+.headings {
+  color: #fff;
+  text-align: left;
+  margin: auto;
+  width: 90%;
+}
+
+.headings h1 {
+  font-family: "Doner";
+  font-size: 4.5rem;
+  line-height: 1.2; /* Adjust line-height for readability */
+  width: 16rem;
+}
+
+.headings p {
+  font-family: "Aptos";
+  font-size: 1.25rem;
+  max-width: 80%; /* Prevent paragraph from stretching too wide */
+  width: 40%;
+  text-justify: inter-word;
+  text-align: justify;
+}
+
+/* New Section */
+.projects {
+  padding-top: 6rem;
+}
+
+.projects-container {
+  margin: auto;
+  max-width: 90%;
+  display: flex;
+  gap: 0.2rem;
+}
+
+.p-texts .our {
+  display: block;
+  font-family: "Doner";
+  font-size: 2.25rem;
+  color: #086189;
+  font-weight: bold;
+  padding-bottom: 0.1rem;
+}
+
+.p-texts .projectss {
+  font-family: "Doner";
+  font-size: 2.25rem;
+  color: #000;
+  font-weight: bold;
+}
+
+.p-texts p {
+  width: 31.375rem;
+  text-align: justify;
+  text-justify: inter-word;
+  padding-right: 4.375rem;
+  font-family: "Aptos";
+  font-size: 1.125rem;
+}
+
+.projects-images {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 0.2rem;
+}
+
+.project-image-container {
+  position: relative;
+  height: 33rem;
+  width: 100%;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+.projects-images img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.project-image-container:hover img {
+  transform: scale(1.09); /* Slightly zoom in */
+  opacity: 1; /* Reduce opacity slightly */
+}
+
+.gradient-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 12%; /* Gradient covers the bottom 20% */
+  background: linear-gradient(to top, #086189, transparent); /* Red gradient */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 0 15px 15px; /* Match the image border radius */
+  transition: opacity 0.3s ease;
+}
+
+.project-image-container:hover .gradient-overlay {
+  opacity: 1; /* Make gradient more visible on hover */
+}
+.image-text {
+  color: white;
+  text-align: center;
+  font-size: 1.25rem;
+  font-family: "Aptos";
+}
+
+.slider-container {
+  padding: 4.375rem;
+  max-width: 90%;
+  margin: auto;
+}
+
+.slider-wrapper {
+  position: relative;
+}
+
+.slider {
+  display: flex;
+  width: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+  border-radius: 0.5rem;
+  -ms-overflow-style: none; /* Hide scrollbar IE and Edge */
+  scrollbar-width: none; /* Hide scrollbar Firefox */
+  height: 36.938rem;
+  animation: auto-scroll 3s infinite;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
+.slider img {
+  flex: 1 0 100%;
+  scroll-snap-align: start;
+  object-fit: cover;
+}
+
+.slider-nav {
+  display: flex;
+  column-gap: 1rem;
+  position: absolute;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.slider-nav a {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: #fff;
+  opacity: 0.75;
+  transition: opacity ease 250ms;
+}
+
+.slider-nav a:hover {
+  opacity: 1;
+}
+
+.contri-heading {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
+.contri-heading h1 {
+  font-family: "Doner";
+  font-size: 3rem;
+  width: 37.188rem;
+  line-height: 2.9rem;
+}
+
+.contri-buttons {
+  padding-top: 1rem;
+}
+
+.btnn {
+  width: 8.875rem;
+  height: 2.292rem;
+  background: #fff;
+  color: #086189;
+  border: none;
+  border-radius: 0.3em;
+  font-size: 1.25em;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  font-family: "Aptos";
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.contri-button:hover {
+  color: #000;
+}
+
+button:after {
+  content: "";
+  background: #086189;
+  color: #fff;
+  position: absolute;
+  z-index: -1;
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+  transition: all 0.2s;
+}
+
+button:hover:after {
+  transform: skewX(-45deg) scale(1, 1);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.event-section {
+  max-width: 100%;
+}
+
+.event-heading {
+  display: flex;
+  justify-content: center;
+}
+
+.event-heading h1 {
+  font-family: "Doner";
+  font-size: 2.25rem;
+}
+
+/* General Section Styles */
+.events-section {
+  width: 100%;
+  margin: auto;
+}
+
+.event-heading h1 {
+  text-align: center;
+  font-size: 2rem;
+  font-family: "Arial", sans-serif;
+  margin-bottom: 1rem;
+}
+
+/* Slider Container */
+.eventimages {
+  width: 100%;
+  overflow: hidden;
+}
+
+.event-slider {
+  display: flex;
+  width: 100%;
+  height: 29.813rem;
+}
+
+.event-slide {
+  position: relative;
+  flex: 1; /* Ensures equal spacing for each slide */
+}
+
+.event-slide img {
+  width: 100%;
+  height: 29.813rem;
+  object-fit: cover; /* Ensures the image covers the entire container */
+  display: block;
+}
+
+/* Text Overlay */
+.event-image-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adds a shadow for better readability */
+  text-align: center;
+  z-index: 1;
+}
+
+.event-image-text h1 {
+  font-family: "Doner";
+  font-size: 4rem;
+  text-transform: uppercase;
+  width: 30.875rem;
+}
+
+.event-image-text p {
+  font-family: "Doner";
+  font-size: 2rem;
+  width: 30.875rem;
+}
